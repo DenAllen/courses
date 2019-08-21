@@ -3,7 +3,14 @@
     padding: 0;
     outline: none;
 }
+html,
+body {
+    height: 100%;
+}
 
+.top {
+    flex-grow: 1;
+}
 a {
     text-decoration: none;
 }
@@ -16,6 +23,9 @@ body {
     max-width: 1620px;
     min-width: 1140px;
     margin: 0 auto;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-size {
@@ -114,11 +124,13 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 0 5px 5px 0;
+    transition: background-color 0.3s;
 }
 
 .head-logo input[type='submit']:hover {
     background-color: #f7f7f7;
     outline: none;
+    transition: background-color 0.3s;
 }
 
 .head-logo input[type='submit']:focus {
@@ -137,15 +149,14 @@ body {
     height: 80%;
 }
 
-.head-right img {
+.head-right-img {
     margin-right: 30px;
     margin-top: 10px;
-    border-bottom: 2px solid #fff;
 }
 
-.head-right img:hover {
-    border-bottom: 2px solid #ccc;
+.head-right-img:hover {
     margin-top: 10px;
+    background-image: radial-gradient(circle, rgba(0,36,36,0.4) 0%, rgba(0,0,0,0.3) 35%, rgba(255,0,0,0) 74%);
 }
 
 .pink-buttom {
@@ -157,11 +168,13 @@ body {
     line-height: 32px;
     letter-spacing: 0.38px;
     height: 36px;
+    transition: background-color 0.4s ease;
 
 }
 
 .pink-buttom:hover {
     background-color: #de8591;
+    transition: background-color 0.4s ease;
 }
 
 .browse-menu-button {
@@ -179,6 +192,8 @@ body {
 .browse-menu-button:hover .browse-menu {
     visibility: visible;
     z-index: 1;
+    opacity: 1;
+    transition: visibility, opacity 0.7s, 0.2s ease;
 }
 
 .browse-menu * {
@@ -205,7 +220,10 @@ body {
     text-align: left;
     padding-left: 20px;
     visibility: hidden;
+    z-index: 1;
+    opacity: 0;
     padding-bottom: 15px;
+    transition: visibility, opacity 0.7s, 0.5s ease;
 }
 
 .browse-menu-ul {
@@ -311,15 +329,18 @@ body {
 .mytotal-first-button {
     padding: 19px 93px;
     border: 1px solid #f16d7f;
+    display: block;
     margin-top: 20px;
     color: #f16d7f;
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
+    transition: background-color 0.2s;
 }
 
 .mytotal-first-button:hover {
     background-color: #F7D3D8;
+    transition: background-color 0.2s;
 }
 
 .mytotal-second-button {
@@ -331,10 +352,12 @@ body {
     text-transform: uppercase;
     margin-top: 10px;
     display: block;
+    transition: background-color 0.2s;
 }
 
 .mytotal-second-button:hover {
     background-color: #ECEBEB;
+    transition: background-color 0.2s;
 }
 
 .mycart:after {
@@ -381,10 +404,12 @@ body {
     border-bottom: solid 2px #ffffff;
     padding-left: 15px;
     padding-right: 15px;
+    transition: border-bottom 0.4s ease;
 }
 
 .nav-list-link:hover {
     border-bottom: solid 2px #222;
+    transition: border-bottom 0.4s ease;
 }
 
 .navigation {
@@ -401,13 +426,16 @@ body {
     border-bottom-color: #fff;
     position: absolute;
     top: -22px;
-    left: 117px;
+    left: 110px;
 }
-
+.mega-menu-last:after{
+    right: 110px;
+    left: auto;
+}
 .mega-menu {
     position: absolute;
     left: -91px;
-    top: 38px;
+    top: 35px;
     display: flex;
     flex-direction: row;
     background-color: #fff;
@@ -417,10 +445,17 @@ body {
     box-shadow: 0px 6px 62px rgba(0, 0, 0, 0.06);
     visibility: hidden;
     z-index: 1;
+    opacity: 0;
+    transition: visibility, opacity 0.7s, 0.5s ease;
 }
-
+.mega-menu-last{
+    right: -100px;
+    left: auto;
+}
 .nav-list:hover .mega-menu {
     visibility: visible;
+    opacity: 1;
+    transition: visibility, opacity 0.7s, 0.2s ease;
 }
 
 .mega-menu-block {
@@ -490,6 +525,7 @@ body {
     display: flex;
     align-content: center;
     margin-top: 100px;
+    justify-content: space-between;
 }
 
 .hot-deal-prod1 {
@@ -522,7 +558,6 @@ body {
 .hot-deal-prod3,
 .hot-deal-prod4 {
     margin-top: 20px;
-    margin-right: 20px;
 }
 
 .hot-deal-prodtext {
@@ -586,6 +621,7 @@ body {
     height: 364px;
     position: relative;
     margin-bottom: 50px;
+    transition: box-shadow 0.7s;
 }
 
 .fetured-items-prod a {
@@ -628,15 +664,18 @@ body {
     color: #ffffff;
     font-size: 13px;
     font-weight: 700;
+    transition: background-color, visibility 1s, 0.15s;
 }
 
 .fetured-items-prod:hover {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
 }
 
 .fetured-items-prod:hover .fetured-items-black-block {
     background-color: rgba(0, 0, 0, 0.5);
     visibility: visible;
+    transition: background-color 0.3s;
 }
 
 .fetured-items-prod:hover .addtocart-stars {
@@ -753,8 +792,7 @@ body {
 
 /*bottom slider*/
 .bottom-slider {
-    background: url(img/Rectangle_9_copy.jpg) no-repeat #f0f0f0;
-    background-position: center;
+    background: #f0f0f0 url(img/Rectangle_9_copy.jpg) no-repeat center;
     width: 100%;
     height: 440px;
     display: flex;
@@ -851,11 +889,11 @@ body {
     display: flex;
 }
 
-.bottom-slider-right-f input[type='text']:focus {
+.bottom-slider-right-f input[type='email']:focus {
     outline: none;
 }
 
-.bottom-slider-right-f input[type='text'] {
+.bottom-slider-right-f input[type='email'] {
     width: 280px;
     background-color: #e1e1e1;
     border-radius: 50px 0 0 50px;
@@ -868,9 +906,10 @@ body {
     letter-spacing: 0.35px;
 }
 
-.bottom-slider-right-f div {
+.bottom-slider-right-f input[type='submit'] {
     border-radius: 0 50px 50px 0;
     background-color: #f16d7f;
+    border: none;
     height: 52px;
     width: 100px;
     display: flex;
@@ -882,6 +921,11 @@ body {
     line-height: 54px;
     letter-spacing: 0.35px;
     opacity: 1;
+    transition: background-color 0.4s ease;
+}
+.bottom-slider-right-f input[type='submit']:hover{
+    background-color: #de8591;
+    transition: background-color 0.4s ease;
 }
 
 .bottom-slider-right-f div:hover {
@@ -989,13 +1033,16 @@ body {
 
 .social a:nth-child(3) {
     background-color: #ededed;
+    transition: background-color 0.2s;
 }
 
 .social a:hover {
     background-color: #f16d7f;
+    transition: background-color 0.2s;
 }
 .social a:hover i{
     color: #f7f7f8;
+    transition: color 0.3s;
 }
 .fa-facebook-f,
 .fa-twitter,
@@ -1003,6 +1050,7 @@ body {
 .fa-google-plus-g,
 .fa-pinterest-p {
     color: #b9b9b9;
+    transition: color 0.3s;
 }
 
 /*страница checkout*/
@@ -1165,10 +1213,12 @@ body {
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
+    transition: background-color 0.3s;
 }
 
 .white-button:hover {
     background-color: #f7f7f7;
+    transition: background-color 0.3s;
 }
 
 .form-right {
@@ -1442,7 +1492,6 @@ body {
     font-weight: bold;
     color: #c4c4c4;
     font-size: 16px;
-    font-weight: bold;
     line-height: 26px;
 }
 
@@ -1454,7 +1503,6 @@ body {
     font-weight: bold;
     color: #c4c4c4;
     font-size: 16px;
-    font-weight: bold;
     line-height: 26px;
 }
 
@@ -1463,7 +1511,6 @@ body {
     font-size: 16px;
     font-weight: bold;
     line-height: 26px;
-    font-weight: bold;
 }
 
 .view-all {
@@ -1478,6 +1525,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     line-height: 26px;
+    transition: background-color 0.3s;
 }
 
 .product-pages {
@@ -1488,6 +1536,7 @@ body {
 
 .view-all:hover {
     background-color: #F7D3D8;
+    transition: background-color 0.3s;
 }
 
 .product-offers {
@@ -1651,6 +1700,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.3s;
 }
 
 .addtocart-button img {
@@ -1659,7 +1709,7 @@ body {
 
 .addtocart-button:hover {
     background-color: #F7D3D8;
-    ;
+    transition: background-color 0.3s;
 }
 
 .prod-decript-form {
@@ -1757,6 +1807,7 @@ td {
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
+    transition: background-color 0.3s;
 }
 
 .cart-contain-buttons {
@@ -1776,6 +1827,7 @@ td {
     box-sizing: border-box;
     width: 145px;
     margin-top: 20px;
+    transition: background-color 0.3s;
 }
 
 .cart-contain-input-big {
@@ -1838,6 +1890,7 @@ td {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.3s;
 }
 
 .payment-div-button {
@@ -1849,12 +1902,15 @@ td {
 
 .cart-contain-button-one:hover {
     background-color: #ECEBEB;
+    transition: background-color 0.3s;
 }
 
 .cart-contain-button-two:hover {
     background-color: #ECEBEB;
+    transition: background-color 0.3s;
 }
 
 .payment-button:hover {
     background-color: #de8591;
+    transition: background-color 0.3s;
 }
